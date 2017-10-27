@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/players/','WeekSixPlayerController@index');
+Route::get('/','WeekSixPlayerController@index');
 
-Route::get('/players/{name?}','WeekSixPlayerController@showInfo');
+Route::get('/info/{name?}/{year?}','WeekSixPlayerController@showInfo');

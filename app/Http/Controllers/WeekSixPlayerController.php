@@ -6,22 +6,26 @@ use Illuminate\Http\Request;
 
 class WeekSixPlayerController extends Controller
 {
-    const Players = Array("lebron james" => "Cleveland Cavaliers", "chris paul" => "Houston Rocket",
-
-        "john wall" => "Washington Wizards", "giannis antetokounmpo" => "Milwaukee Bucks");
+    const Players = Array(
+        "Lebron James" => Array("2017" => "Cleveland Cavaliers", "2016" => "Cleveland Cavaliers", "2015" => "Cleveland Cavaliers",
+                                "2014" => "Miami Heat", "2013" => "Miami Heat", "2012" => "Miami Heat"),
+        "Chris Paul" => Array("2017" => "Houston Rocket", "2016" => "Los Angeles Clippers", "2015" => "Los Angeles Clippers",
+                              "2014" => "Los Angeles Clippers", "2013" => "Los Angeles Clippers", "2012" => "Los Angeles Clippers"),
+        "Dwight Howard" => Array("2017" => "Charlotte Hornets", "2016" => "Atlanta Hawks", "2015" => "Houston Rockets",
+                                "2014" => "Houston Rockets", "2013" => "Houston Rockets","2012" => "Los Angeles Lakers")
+    );
 
     public function index(){
-        foreach(self::Players as $name => $team)
-        echo "<h1><i>".ucfirst($name)."</i> is playing for ".$team.".</h1><br>";
+        return view('playerForm');
     }
 
-    public function showInfo($name = ""){
+    public function showInfo($name = null, $year = null){
         $name = str_replace("-"," ",strtolower($name));
 
-        if($name == ""){
+        if(!$name){
             self::index();
         }
-        elseif(array_key_exists($name,self::Players)){
+        elseif(array_key_exists(ucfirst($name),self::Players)){
             echo "<h1><i>".ucfirst($name)."</i> is playing for ".self::Players[$name].".</h1><br>";
         }
         else{
