@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/players/','WeekSixPlayerController@index');
+
+Route::get('/players/{name?}','WeekSixPlayerController@showInfo');
