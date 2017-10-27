@@ -19,11 +19,30 @@ class WeekSixPlayerController extends Controller
         return view('playerForm');
     }
 
+
     public function showInfo($name = null, $year = null){
         $name = str_replace("-"," ",strtolower($name));
 
-        if(!$name){
-            self::index();
+        if(!$name && !$year){
+
+            echo "<table style='margin:auto'>";
+            echo    "<tr>";
+                 echo  "<th>YEAR</th>";
+                 echo  "<th>PLAYER</th>";
+                 echo  "<th>TEAM</th>";
+            echo    "</tr>";
+            foreach(self::Players as $name => $teams){
+
+                foreach($teams as $year => $team){
+                    echo "<tr>";
+                    echo    "<td style='border:1px solid black;padding:5px'>".$year."</td>";
+                    echo    "<td style='border:1px solid black;padding:5px'>".$name."</td>";
+                    echo    "<td style='border:1px solid black;padding:5px'>".$team."</td>";
+                    echo "<tr>";
+                }
+            }
+            echo "<table>";
+
         }
         elseif(array_key_exists(ucfirst($name),self::Players)){
             echo "<h1><i>".ucfirst($name)."</i> is playing for ".self::Players[$name].".</h1><br>";
