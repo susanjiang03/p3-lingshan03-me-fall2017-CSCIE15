@@ -43,10 +43,12 @@
 
         .content {
             text-align: center;
+            width:80%;
+            margin:auto;
         }
 
         .title {
-            font-size: 50px;
+            font-size: 30px;
         }
 
         .links > a {
@@ -78,7 +80,7 @@
     @endif
 
     <div class="content">
-        <div class="title m-b-md">
+        <div class="title">
             Find out which team the NBA player is/was playing for on select year:
         </div>
         <form method="post">
