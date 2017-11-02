@@ -2,6 +2,8 @@
 
 return [
 
+    'supportEmail' => 'susanjiang03@gmail.com',
+    'systemEmail' => 'susanjiang03@gmail.com',
     /*
     |--------------------------------------------------------------------------
     | Mail Driver
