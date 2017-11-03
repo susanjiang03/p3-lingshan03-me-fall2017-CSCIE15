@@ -1,74 +1,93 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        @yield('title', 'UCBA')
+    </title>
 
-    <title>UCBA</title>
-
+    <meta charset='utf-8'>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-    <!-- Styles -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    @stack('head')
     <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 100;
-            height: 100vh;
-            margin: 0;
+        .navbar-custom {
+            background-color:#e74c3c;
+            color:#ffffff;
         }
 
-        .full-height {
-            height: 100vh;
+        .navbar-custom .navbar-nav > li > a {
+            color:#fff;
         }
 
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
+        .navbar-custom .navbar-nav > .active > a {
+            color: #ffffff;
+            background-color:transparent;
         }
 
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-            width:80%;
-            margin:auto;
-        }
-
-        .title {
-            font-size: 30px;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .1rem;
+        .navbar-custom .navbar-nav > li > a:hover,
+        .navbar-custom .navbar-nav > li > a:focus,
+        .navbar-custom .navbar-nav > .active > a:hover,
+        .navbar-custom .navbar-nav > .active > a:focus,
+        .navbar-custom .navbar-nav > .open >a {
             text-decoration: none;
-            text-transform: uppercase;
+            background-color: #ffbbbc;
         }
 
-        .m-b-md {
-            margin-bottom: 30px;
+        .navbar-custom .navbar-brand {
+            color:#eeeeee;
+        }
+        .navbar-custom .navbar-toggle {
+            background-color:#eeeeee;
+        }
+        .navbar-custom .icon-bar {
+            background-color:#ecf0f1;
         }
     </style>
+
 </head>
 <body>
-<div class="flex-center position-ref full-height">
-    
-</div>
+    <div class="container">
+<header>
+    <img src="{{url('/images/UCBA.jpg')}}" class="header" width="100%" height="250px">
+    <nav class="navbar navbar-default navbar-custom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">UCBA</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Scores</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Video</a></li>
+                <li><a href="#">Standings</a></li>
+                <li><a href="#">Stats</a></li>
+                <li><a href="#">Players</a></li>
+                <li><a href="#">Teams</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<section>
+    @yield('content')
+</section>
+<footer>
+    &copy; {{ date('Y') }}
+</footer>
+
+@stack('body')
+
+    </div>
+
 </body>
 </html>
