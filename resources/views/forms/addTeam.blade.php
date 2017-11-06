@@ -4,7 +4,18 @@
     <div class="col-lg-6">
         <h2>All Teams</h2>
         <hr>
-
+        @foreach($teams as $team => $contact)
+            <ul class="panel">
+                <div class="panel-head">
+                    {{$team}}
+                </div>
+                <div class="panel-body">
+                    @foreach($contact as $key => $value)
+                        <li>{{ strtoupper($key) }} : {{$value}}</li>
+                    @endforeach
+                </div>
+            </div>
+        @endforeach
     </div>
     <div class="col-lg-6">
         <h2>Register A New Team</h2>
