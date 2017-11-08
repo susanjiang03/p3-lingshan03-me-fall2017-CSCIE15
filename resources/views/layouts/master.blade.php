@@ -52,6 +52,11 @@
         .navbar-custom .icon-bar {
             background-color:#ecf0f1;
         }
+
+        .required:after {
+            content:" *";
+            color:red;
+        }
     </style>
 
 </head>
@@ -62,7 +67,7 @@
     <nav class="navbar navbar-default navbar-custom">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">UCBA</a>
+                <a class="navbar-brand" href="{{url('/')}}">UCBA</a>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Scores</a></li>
@@ -74,14 +79,22 @@
                 <li><a href="#">Players</a></li>
                 <li><a href="#">Teams</a></li>
             </ul>
+            <div>
+                <form class="navbar-form" method="GET" action="{{url('/search')}}">
+                    <div class="form-group">
+                        <input name="searchTeam" id="searchTeam" type="text" placeholder="Search By Team Name" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
         </div>
     </nav>
 </header>
 
-<section>
+<section class="row">
     @yield('content')
 </section>
-<footer>
+<footer class="text-center row">
     &copy; {{ date('Y') }}
 </footer>
 

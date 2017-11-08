@@ -14,8 +14,7 @@
 
 //Route::get('/
 Route::get('/','PlayersController@index');
-
-Route::get('/info/{name?}/{year?}','WeekSixPlayerController@showInfo');
+//Route::get('/info/{name?}/{year?}','WeekSixPlayerController@showInfo');
 
 
 Route::get('/env', function () {
@@ -26,3 +25,8 @@ Route::get('/env', function () {
     dump(config('mail.supportEmail'));
 });
 
+
+
+Route::get('/search','PlayersController@searchTeam');
+
+Route::post('/','PlayersController@addTeam');

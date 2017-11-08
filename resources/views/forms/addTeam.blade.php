@@ -5,36 +5,68 @@
         <h2>All Teams</h2>
         <hr>
         @foreach($teams as $team => $contact)
-            <ul class="panel">
+            <div class="panel">
                 <div class="panel-head">
                     {{$team}}
                 </div>
                 <div class="panel-body">
                     @foreach($contact as $key => $value)
-                        <li>{{ strtoupper($key) }} : {{$value}}</li>
+                        <li>{{ ucfirst($key) }} : {{$value}}</li>
                     @endforeach
                 </div>
             </div>
         @endforeach
+        @if(isset($newTeam))
+            @foreach($teams as $team => $contact)
+                <div class="panel">
+                    <div class="panel-head">
+                        {{$team}}
+                    </div>
+                    <div class="panel-body">
+                        @foreach($contact as $key => $value)
+                            <li>{{ ucfirst($key) }} : {{$value}}</li>
+                        @endforeach
+                    </div>
+                </div>
+            @endforeach
+        @endif
     </div>
     <div class="col-lg-6">
         <h2>Register A New Team</h2>
-        <form class="well">
+        <form class="well" method="post">
             <div class="form-group">
-                <label for="teamName">Team Name</label>
-                <input type="text" class="form-control" id="teamName">
+                <label for="teamName" class="required">Team Name</label>
+                <input type="text" class="form-control" id="teamName" required>
             </div>
             <div class="form-group">
                 <label for="email">Email address:</label>
                 <input type="email" class="form-control" id="email">
             </div>
             <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="text" class="form-control" id="phone">
+                <label for="phone" class="required">Phone</label>
+                <input type="text" class="form-control" id="phone" required>
             </div>
             <div class="form-group">
                 <label for="captName">Captain Name</label>
                 <input type="text" class="form-control" id="captName">
+            </div>
+            <div class="form-group">
+                <label for="hasSponsor">Has Sponsor</label>
+                <label class="checkbox-inline"><input type="checkbox" name="hasSponsor">Yes</label>
+            </div>
+            <div class="form-group">
+                <label for="selNumOfPlayers" class="required">Number of Players: (7 to 15) </label>
+                <select class="form-control" id="selNumOfPlayers" required>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
