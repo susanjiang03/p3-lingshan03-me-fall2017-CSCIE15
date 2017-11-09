@@ -47,9 +47,9 @@
                 </label>
             </div>
             <div class="form-group">
-                <label for="numOfPlayers" class="required">Number of Players: (7 to 15) </label>
+                <label for="numPlayers" class="required">Number of Players: (7 to 15) </label>
                 <select class="form-control" id="numPlayers" name="numPlayers">
-                    <option value=""></option>
+                    <option value="">&nbsp;</option>
                     @for($i = 7; $i <= 15; $i ++)
                         <option value="{{$i}}" @if(old('numPlayers') == $i) selected @endif>{{$i}} </option>
                     @endfor
