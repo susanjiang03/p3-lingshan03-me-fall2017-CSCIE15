@@ -4,18 +4,6 @@
     <div class="col-lg-6">
         <h2>All Teams</h2>
         <hr>
-        @foreach($teams as $team => $contact)
-            <div class="panel">
-                <div class="panel-head">
-                    {{$team}}
-                </div>
-                <div class="panel-body">
-                    @foreach($contact as $key => $value)
-                        <p>{{ ucfirst($key) }} : {{$value}}</p>
-                    @endforeach
-                </div>
-            </div>
-        @endforeach
         @if(isset($newTeam))
             @foreach($teams as $team => $contact)
                 <div class="panel">
@@ -30,6 +18,20 @@
                 </div>
             @endforeach
         @endif
+
+        @foreach($teams as $team => $contact)
+            <div class="panel">
+                <div class="panel-head">
+                    {{$team}}
+                </div>
+                <div class="panel-body">
+                    @foreach($contact as $key => $value)
+                        <p>{{ ucfirst($key) }} : {{$value}}</p>
+                    @endforeach
+                </div>
+            </div>
+        @endforeach
+
     </div>
     <div class="col-lg-6">
         <h2>Register A New Team</h2>

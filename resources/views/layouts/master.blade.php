@@ -57,13 +57,18 @@
             content:" *";
             color:red;
         }
+
+        img.header{
+            width:100%;
+            height:250px;
+        }
     </style>
 
 </head>
 <body>
     <div class="container">
 <header>
-    <img src="{{url('/images/UCBA.jpg')}}" class="header" width="100%" height="250px">
+    <img src="{{url('/images/UCBA.jpg')}}" class="header">
     <nav class="navbar navbar-default navbar-custom">
         <div class="container-fluid">
             <div class="navbar-header">
