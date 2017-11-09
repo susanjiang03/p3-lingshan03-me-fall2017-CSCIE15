@@ -13,7 +13,7 @@
                     </div>
                     <div class="panel-body">
                         @foreach($contact as $key => $value)
-                            <li>{{ ucfirst($key) }} : {{$value}}</li>
+                            <p>{{ ucfirst($key) }} : {{$value}}</p>
                         @endforeach
                     </div>
                 </div>
