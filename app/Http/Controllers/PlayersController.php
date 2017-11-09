@@ -28,7 +28,7 @@ class PlayersController extends Controller
             'email' => $request->input('email'),
             'phone' => $request->input('phone'),
             'Captain Name' => $request->input('captName'),
-            'Has Sponsor' => $request->input('hasSponsor'),
+            'Has Sponsor' => ($request->input('hasSponsor')) ? 'Yes' : 'No',
             'Number of Players' => $request->input('numPlayers'),
         );
 
