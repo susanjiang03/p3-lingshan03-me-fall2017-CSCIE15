@@ -24,7 +24,7 @@
                     </div>
                     <div class="panel-body">
                         @foreach($contact as $key => $value)
-                            <li>{{ ucfirst($key) }} : {{$value}}</li>
+                            <p>{{ ucfirst($key) }} : {{$value}}</p>
                         @endforeach
                     </div>
                 </div>
@@ -33,10 +33,11 @@
     </div>
     <div class="col-lg-6">
         <h2>Register A New Team</h2>
-        <form class="well" method="post">
+        <form class="well" method="POST">
+            {{ csrf_field() }}
             <div class="form-group">
                 <label for="teamName" class="required">Team Name</label>
-                <input type="text" class="form-control" id="teamName" required>
+                <input type="text" class="form-control" id="teamName">
             </div>
             <div class="form-group">
                 <label for="email">Email address:</label>
@@ -44,7 +45,7 @@
             </div>
             <div class="form-group">
                 <label for="phone" class="required">Phone</label>
-                <input type="text" class="form-control" id="phone" required>
+                <input type="text" class="form-control" id="phone">
             </div>
             <div class="form-group">
                 <label for="captName">Captain Name</label>
@@ -56,7 +57,7 @@
             </div>
             <div class="form-group">
                 <label for="selNumOfPlayers" class="required">Number of Players: (7 to 15) </label>
-                <select class="form-control" id="selNumOfPlayers" required>
+                <select class="form-control" id="selNumOfPlayers">
                     <option value="7">7</option>
                     <option value="8">8</option>
                     <option value="9">9</option>

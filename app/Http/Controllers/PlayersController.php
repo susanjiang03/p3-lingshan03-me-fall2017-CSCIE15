@@ -18,12 +18,15 @@ class PlayersController extends Controller
 
 
     public function searchTeam(Request $request){
-        $searchTeam = strtolower($request->input('searchTeam'));
+        $searchTeam = strtolower($request->input('searchTeam',null));
         $allTeams = $this->getAllTeams();
         $filterTeams = Array();
-        foreach($allTeams as $team=>$value){
-            if(strpos(strtolower($team), $searchTeam) !== false){
-                $filterTeams[$team] = $value;
+
+        if($searchTeam) {
+            foreach ($allTeams as $team => $value) {
+                if (strpos(strtolower($team), $searchTeam) !== false) {
+                    $filterTeams[$team] = $value;
+                }
             }
         }
 

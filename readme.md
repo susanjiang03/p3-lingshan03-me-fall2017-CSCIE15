@@ -1,9 +1,15 @@
-# my p3
+# Project 3 Home Page
 <http://p3.lingshan03.me>
 
-## test routers
+#Features
+* Show All Teams :
 <http://p3.lingshan03.me>
 
-<http://p3.lingshan03.me/info/>
+* Add A New Team : 
+<http://p3.lingshan03.me>
 
-<http://p3.lingshan03.me/lebron-james/>
+* Search A Team By Name :
+<http://p3.lingshan03.me/search?searchTeam=Cleveland>
+
+* Show Players :
+<http://p3.lingshan03.me/info>

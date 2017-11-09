@@ -18,6 +18,8 @@
                     </div>
                 </div>
             @endforeach
+        @elseif(!$searchTeam)
+            <h3 class="text-center">No input keyword.</h3>
         @else
             <h3 class="text-center">No Team found</h3>
         @endif
