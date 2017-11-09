@@ -55,7 +55,7 @@
             </div>
             <div class="form-group">
                 <label for="hasSponsor">Has Sponsor</label>
-                <label class="checkbox-inline"><input type="checkbox" name="hasSponsor">Yes</label>
+                <label class="checkbox-inline"><input type="checkbox" name="hasSponsor" id="hasSponsor">Yes</label>
             </div>
             <div class="form-group">
                 <label for="selNumOfPlayers" class="required">Number of Players: (7 to 15) </label>
