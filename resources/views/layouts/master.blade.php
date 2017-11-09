@@ -68,7 +68,7 @@
 <body>
     <div class="container">
 <header>
-    <img src="{{url('/images/UCBA.jpg')}}" class="header">
+    <img src="{{url('/images/UCBA.jpg')}}" class="header" alt="UnitedChinseBasketballAssoication">
     <nav class="navbar navbar-default navbar-custom">
         <div class="container-fluid">
             <div class="navbar-header">
