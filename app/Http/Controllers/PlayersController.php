@@ -12,8 +12,29 @@ class PlayersController extends Controller
         ]);
     }
 
-    public function addTeam(){
-        return view('forms.addTeam');
+    public function addTeam(Request $request){
+        # Validate the request data
+        $this->validate($request, [
+            'teamName' => 'required|min:3|regex:/^[\pL\s]+$/u',
+            'phone' => 'required|digits:10',
+            'numPlayers' => 'required',
+        ]);
+
+        $teams = $this->getAllTeams();
+
+        $newTeamName = $request->input('teamName');
+
+        $teams[$newTeamName] = Array(
+            'email' => $request->input('email'),
+            'phone' => $request->input('phone'),
+            'Captain Name' => $request->input('captName'),
+            'Has Sponsor' => $request->input('hasSponsor'),
+            'Number of Players' => $request->input('numPlayers'),
+        );
+
+        return view('forms.addTeam')->with([
+            'teams' => $teams,
+        ]);
     }
 
 
